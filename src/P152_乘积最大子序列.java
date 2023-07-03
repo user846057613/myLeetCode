@@ -38,4 +38,27 @@ public class P152_乘积最大子序列 {
         }
         return maxProduct;
     }
+
+
+    public int maxProduct2(int[] nums) {
+        if(nums.length == 0 || nums == null) {
+            return 0;
+        }
+        int result = Integer.MIN_VALUE;
+
+        int imax = 1, imin = 1;
+        for(int i = 0; i < nums.length; i++) {
+            if(nums[i] < 0) {
+                int temp = imax;
+                imax = imin;
+                imin = temp;
+            }
+
+            imax = Math.max(imax * nums[i], nums[i]);
+            imin = Math.min(imin * nums[i], nums[i]);
+
+            result = Math.max(result, imax);
+        }
+        return  result;
+    }
 }

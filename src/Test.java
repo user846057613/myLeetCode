@@ -1,3 +1,6 @@
+import java.math.BigDecimal;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Objects;
 
 public class Test {
@@ -8,6 +11,8 @@ public class Test {
         t.setAnInt(12);
         t.setBnInt(15);
         System.out.println(t);
+        Map m = new HashMap();
+        BigDecimal
     }
 
 }
